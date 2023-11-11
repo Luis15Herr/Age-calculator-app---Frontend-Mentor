@@ -1,6 +1,112 @@
 * {
-  font-family: "Commissioner", sans-serif;
-  font-family: "Hanken Grotesk", sans-serif;
   font-family: "Poppins", sans-serif;
-  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+body {
+  background-color: hsl(0, 0%, 94%);
+  font-size: 32px;
+  position: relative;
+}
+
+body::after {
+  position: absolute;
+  top: 0;
+  background-image: url(./design/desktop-design.jpg);
+  content: "";
+  width: 100%;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+  height: 100%;
+  pointer-events: none;
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator {
+  background-color: hsl(0, 0%, 100%);
+  height: 610px;
+  width: 790px;
+  border-radius: 25px 25px 190px 25px;
+  padding: 53px 54px;
+}
+
+.calculator__top {
+  display: flex;
+  border-bottom: 1px solid hsl(0, 0%, 94%);
+  padding-bottom: 45px;
+  position: relative;
+}
+
+.calculator__input-wrapper {
+  position: relative;
+  margin-right: 30px;
+}
+
+.input-wrapper__label {
+  display: block;
+  text-transform: uppercase;
+  font-size: 0.4em;
+  letter-spacing: 3.8px;
+  font-weight: 700;
+  color: hsl(0, 1%, 44%);
+  margin-bottom: 8px;
+}
+
+.input-wrapper__input {
+  width: 150px;
+  font-size: 1em;
+  border: 1px solid hsl(0, 0%, 94%);
+  font-weight: 700;
+  padding: 8px 21px;
+  border-radius: 5px;
+}
+
+.calculator__btn {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 0;
+  background-color: hsl(259, 100%, 65%);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: translateY(50%);
+  padding-top: 5px;
+}
+
+.calculator__results {
+  font-style: italic;
+}
+
+.results__item {
+  font-size: 3.1em;
+  font-weight: 700;
+  position: relative;
+  top: 24px;
+  letter-spacing: -3px;
+  line-height: 107px;
+  top: 44px;
+}
+
+.item__number {
+  color: hsl(259, 100%, 65%);
+}
+
+.item__title {
+  padding-left: 10px;
 }/*# sourceMappingURL=style.css.map */
