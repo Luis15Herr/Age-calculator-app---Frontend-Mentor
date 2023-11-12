@@ -17,7 +17,7 @@ body {
   position: relative;
 }
 
-body::after {
+/* body::after {
   position: absolute;
   top: 0;
   background-image: url(./design/desktop-design.jpg);
@@ -29,8 +29,7 @@ body::after {
   opacity: 0.3;
   height: 100%;
   pointer-events: none;
-}
-
+} */
 #app {
   display: flex;
   justify-content: center;
