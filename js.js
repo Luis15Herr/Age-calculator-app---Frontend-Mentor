@@ -22,18 +22,18 @@ Vue.createApp({
 }).mount("#app");
 
 let meses = {
-  1: 31,
-  2: 28,
-  3: 31,
-  4: 30,
-  5: 31,
-  6: 30,
-  7: 31,
-  8: 31,
-  9: 30,
-  10: 31,
-  11: 30,
-  12: 31,
+  1: { size: 31, name: "enero" },
+  2: { size: 28, name: "febrero" },
+  3: { size: 31, name: "marzo" },
+  4: { size: 30, name: "abril" },
+  5: { size: 31, name: "mayo" },
+  6: { size: 30, name: "junio" },
+  7: { size: 31, name: "julio" },
+  8: { size: 31, name: "agosto" },
+  9: { size: 30, name: "septiembre" },
+  10: { size: 31, name: "octubre" },
+  11: { size: 30, name: "noviembre" },
+  12: { size: 31, name: "diciembre" },
 };
 
 let actualDay = 12;
@@ -45,19 +45,21 @@ let stopDate = null;
 let daysTranscurred = 0;
 let monthsTranscurred = 0;
 
+let daysAway = null;
+
 for (let index = birthMonth; index < actualMonth + 1; index++) {
   if (index === birthMonth) {
-    console.log("una vez");
     dayCounter = birthDay;
   }
   monthsTranscurred++;
 
-  stopDate = meses[index] + 1;
+  stopDate = meses[index].size + 1;
   if (index != birthMonth) {
     dayCounter = 1;
   } else {
     dayCounter = dayCounter + 1;
   }
+  console.log(monthsTranscurred, meses[index].name);
 
   if (index === actualMonth) {
     stopDate = actualDay + 1;
@@ -65,10 +67,21 @@ for (let index = birthMonth; index < actualMonth + 1; index++) {
       monthsTranscurred--;
     }
   }
-
+  daysTranscurred = 0;
   for (let j = dayCounter; j < stopDate; j++) {
     daysTranscurred++;
   }
+  if (daysTranscurred < meses[index].size) {
+    daysAway += daysTranscurred;
+  }
 }
-console.log(monthsTranscurred);
-console.log(daysTranscurred);
+if (daysTranscurred < meses[actualMonth].size) {
+  monthsTranscurred--;
+}
+console.log(meses[actualMonth].size);
+if (daysAway >= 30) {
+  daysAway = 0;
+}
+console.log(daysAway);
+console.log("Son los meses pasados", monthsTranscurred);
+console.log("Son los dias pasados", daysAway);
