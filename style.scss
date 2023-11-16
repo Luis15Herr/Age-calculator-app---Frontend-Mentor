@@ -25,7 +25,7 @@ body {
   font-size: 32px;
   position: relative;
 }
-body::after {
+/* body::after {
   position: absolute;
   top: 0;
   background-image: url(./design/mobile-design.jpg);
@@ -37,7 +37,7 @@ body::after {
   opacity: 0.3;
   height: 960px;
   pointer-events: none;
-}
+} */
 #app {
   display: flex;
   justify-content: center;
